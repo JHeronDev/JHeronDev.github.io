@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio JHÉRON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            text-align: center;
+            background: rgb(228, 228, 228);
+        }
+
+        nav {
+            background-color: #393e49;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover,
+        a.lienactif {
+            background-color: #61dafb;
+            color: black;
+        }
+
+        main {
+            position: relative;
+            height: 93vh;
+        }
+
+        .page {
+            position: absolute;
+            width: 80%;
+            min-height: 100%;
+            top: 0;
+            left: 10%;
+            box-sizing: border-box;
+            padding: 2rem;
+
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid #4e4e4e;
+
+
+            transition: transform 0.5s ease-out;
+
+            background: linear-gradient(135deg, #142c4e, #41536d);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page h1 {
+            font-size: 3rem;
+        }
+
+        .page p,
+        li {
+            font-size: 1.3rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .page a {
+            background-color: #61dafb;
+            color: black;
+            text-decoration: none;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+
+        }
+
+
+
+        .page img {
+            height: 1.3rem;
+            vertical-align: text-bottom;
+        }
+
+
+        .projets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .projet {
+            background: rgb(212, 212, 212);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+        }
+
+        .projet span {
+            color: gray;
+            position: absolute;
+        }
+
+        .projet:hover {
+            transform: translateY(-5px);
+        }
+
+        .projet h2 {
+            margin: 0 0 0.5rem;
+            color: #111827;
+        }
+
+        .projet p {
+            flex-grow: 1;
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .contact-info a {
+            background-color: transparent;
+            color: white;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" data-page="accueil">Accueil</a>
+        <a href="#" data-page="perso">Profil</a>
+        <a href="#" data-page="btsciel">Formation</a>
+        <a href="#" data-page="entreprise">Entreprise</a>
+        <a href="#" data-page="projets">Projets</a>
+        <a href="#" data-page="veille">Veille</a>
+        <a href="#" data-page="contact">Contact</a>
+    </nav>
+
+    <main id="content"></main>
+
+    <template id="accueil">
+        <h1>Bienvenue</h1>
+        <p>Portfolio de Julien HÉRON<br><br>BTS CIEL option IR<br><br>2024-2026</p>
+    </template>
+
+
+    <template id="perso">
+        <h1>Julien HÉRON</h1>
+        <div style="text-align: justify;">
+            <p>Je suis actuellement étudiant en BTS CIEL (Cybersécurité, Informatique, ELectronique), option IR
+                (Informatique et Réseaux).</p>
+            <p>Passionné par le développement web et les nouvelles technologies, je me forme aux
+                métiers de l’informatique, avec un accent sur la conception d’applications et la programmation.</p>
+            <p>Au cours de ma formation, j'ai eu l'occasion de travailler sur divers projets, tant en individuelle qu'en
+                équipe, ce qui m'a permis d'acquérir des compétences solides en développement et en gestion de
+                projets.</p>
+            <p>Ce parcours m'a également appris à résoudre des problèmes techniques et à collaborer efficacement avec
+                d'autres.</p>
+            <p>Je suis impatient d'explorer de nouvelles opportunités et de relever des défis dans le domaine de
+                l'informatique. N'hésitez pas à me contacter pour en savoir plus !</p>
+        </div>
+        <a href="https://drive.google.com/file/d/14AjDO1dOb3OKla_T0KA8XtVPp8hBTYw0/view?usp=sharing" target="_blank">Mon
+            CV</a>
+    </template>
+
+
+    <template id="btsciel">
+        <h1>Le BTS CIEL - IR</h1>
+        <h2>Cybersécurité, Informatique et réseaux, ELectronique</h2>
+        <h2>Option Informatique et Réseaux</h2>
+        <div style="text-align: start;">
+            <p>Le BTS CIEL option IR forme des techniciens
+                capables d’intervenir sur des systèmes informatiques et des réseaux sécurisés.</p>
+
+            <h2>Objectifs de la formation</h2>
+            <ul>
+                <li>Concevoir, mettre en œuvre et maintenir des systèmes informatiques</li>
+                <li>Installer et administrer des réseaux locaux ou étendus</li>
+                <li>Appliquer des principes de cybersécurité</li>
+                <li>Collaborer en mode projet dans des environnements professionnels</li>
+            </ul>
+
+            <h2>Compétences développées</h2>
+            <ul>
+                <li>Programmation (Python, C, Web...)</li>
+                <li>Administration réseaux et systèmes</li>
+                <li>Déploiement sécurisé d’infrastructures</li>
+                <li>Résolution de problèmes techniques</li>
+            </ul>
+
+            <h2>Débouchés et poursuites d'études</h2>
+            <p>Les diplômés peuvent travailler comme technicien informatique, administrateur réseaux, ou poursuivre
+                en licence pro, bachelor ou école d’ingénieurs.</p>
+        </div>
+        <a href="https://www.onisep.fr/Ressources/Univers-Formation/Formations/Post-Bac/BTS-CIEL-Cybersecurite-Informatique-Electronique-option-Informatique-et-Reseaux"
+            target="_blank">Fiche ONISEP de la formation</a>
+    </template>
+
+
+    <template id="entreprise">
+        <h2>Work in progress</h2>
+    </template>
+
+
+    <template id="projets">
+        <div class="projets-grid">
+            <div class="projet"><span>#Dev</span>
+                <h2>Portfolio</h2>
+                <p>Site web personnel pour présenter mon parcours, mes compétences et mes projets, front-end JS</p>
+            </div>
+            <div class="projet"><span>#Dev</span>
+                <h2>Gestion de tâches</h2>
+                <p>Site de gestion de tâches, fullstack PHP/JS avec BDD</p>
+                <a href="https://github.com/JHeronDev/gestion_taches" target="_blank">GitHub</a>
+            </div>
+            <div class="projet"><span>#Dev</span>
+                <h2>Livre d'or</h2>
+                <p>Site de dépot de message, fullstack JS et fichier JSON</p>
+                <a href="https://github.com/JHeronDev/livre-d-or" target="_blank">GitHub</a>
+            </div>
+            <div class="projet"><span>#Dev</span>
+                <h2>Meteo</h2>
+                <p>Site d'affichage de meteo par ville grace à une API, front-end JS</p>
+                <a href="https://github.com/JHeronDev/meteo" target="_blank">GitHub</a>
+            </div>
+            <div class="projet"><span>#Dev</span>
+                <h2>Livres</h2>
+                <p>Site de recherche de livres grace à une API, front-end JS</p>
+                <a href="https://github.com/JHeronDev/recherche-livres" target="_blank">GitHub</a>
+            </div>
+            <div class="projet"><span>#Sys</span>
+                <h2>Winserv</h2>
+                <p>Configuration d'une VM windows server, AD, DNS et GPO</p>
+            </div>
+            <div class="projet"><span>#Sys</span>
+                <h2>Debian</h2>
+                <p>Configuration d'une VM debian, users, permissions et serveur NGINX</p>
+            </div>
+            <div class="projet"><span>#Res</span>
+                <h2>Pfsense</h2>
+                <p>Configuration d'une VM pfsense, parfeu et DHCP.</p>
+            </div>
+            <div class="projet"><span>#Res</span>
+                <h2>Cisco</h2>
+                <p>Création réseau et interventions sur cisco packet tracer. Config routeurs, switch, machines,
+                    parfeu, LANs et VLANs, routage static et RIP.</p>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="veille">
+        <h1>Veille technologique</h1>
+        <div style="text-align: justify;">
+            <p>La veille technologique consiste à se tenir informé des évolutions dans le domaine de l’informatique,
+                afin de s’adapter aux tendances, innover, et anticiper les changements.</p>
+            <h2>Intelligence Artificielle et Développement Web</h2>
+            <p>L’IA transforme le développement web : génération de code, assistants IA (comme GitHub Copilot),
+                automatisation des tests, et optimisation UX via l’analyse comportementale. Cette évolution impacte
+                directement les compétences attendues dans le monde professionnel.</p>
+
+            <h2>Sources suivies</h2>
+            <div class="source">
+                <h3><a href="https://developers.google.com/web" target="_blank">Google Developers</a></h3>
+                <p>Actualités sur les outils et technologies du Web (WebAssembly, performance, PWA, etc.).</p>
+            </div>
+            <div class="source">
+                <h3><a href="https://www.journaldunet.com/intelligence-artificielle/" target="_blank">Journal du Net</a>
+                </h3>
+                <p>Articles sur les langages, frameworks modernes et évolution du marché du développement logiciel.
+                </p>
+            </div>
+            <div class="source">
+                <h3><a href="https://www.lebigdata.fr" target="_blank">LeBigData.fr</a></h3>
+                <p>Veille sur l’intelligence artificielle, le machine learning, les algorithmes et l’impact sur les
+                    métiers.</p>
+            </div>
+            <div class="source">
+                <h3><a href="https://www.w3schools.com/whatis/" target="_blank">W3Schools – What is…</a></h3>
+                <p>Ressources pédagogiques pour découvrir les concepts émergents (NoCode, IA, Web3, etc.).</p>
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>Grâce à cette veille régulière, je reste informé des outils et langages les plus demandés, ce qui me
+                permet d’orienter mes apprentissages et projets vers des technologies actuelles et recherchées.</p>
+        </div>
+    </template>
+
+
+    <template id="contact">
+        <h1>Contacts</h1>
+        <div class="contact-info">
+            <p>Pour toute question, proposition ou collaboration, n'hésitez pas à me contacter via les moyens suivants :
+            </p>
+            <p><a href="https://www.linkedin.com/in/julien-h%C3%A9ron-64ab72281/" target="_blank"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"> Julien
+                    HÉRON</a>
+            </p>
+            <p>📍 Franconville 95130</p>
+            <p><a href="mailto:julien.heron.etu@gmail.com">✉
+                    julien.heron.etu@gmail.com</a></p>
+            <p><a href="https://github.com/JHeronDev" target="_blank"><img
+                        src="https://logo-marque.com/wp-content/uploads/2020/12/GitHub-Embleme-650x366.png">JHeronDev</a>
+            </p>
+
+        </div>
+    </template>
+
+    <script>const content = document.getElementById('content');
+        const ordrePages = ['accueil', 'perso', 'btsciel', 'entreprise', 'projets', 'veille', 'contact'];
+
+        let actuelleId = 'accueil';
+        let actuellePage = null;
+
+        const templateAccueil = document.getElementById('accueil');
+        const accueilPage = document.createElement('div');
+        accueilPage.className = 'page';
+        accueilPage.innerHTML = templateAccueil.innerHTML;
+        content.appendChild(accueilPage);
+        actuellePage = accueilPage;
+        document.querySelector('nav a[data-page="accueil"]').classList.add('lienactif');
+
+        document.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                window.scrollTo({ top: 0 });
+
+
+
+                const nouvelleId = link.dataset.page;
+                if (nouvelleId === actuelleId) return;
+
+                document.querySelectorAll('nav a').forEach(a => {
+                    a.classList.toggle('lienactif', a.dataset.page === nouvelleId);
+                });
+
+
+
+                const template = document.getElementById(nouvelleId);
+                if (!template) return;
+
+                const indexActuelle = ordrePages.indexOf(actuelleId);
+                const indexNouvelle = ordrePages.indexOf(nouvelleId);
+
+                const nouvellePage = document.createElement('div');
+                nouvellePage.className = 'page';
+                nouvellePage.innerHTML = template.innerHTML;
+
+
+                nouvellePage.style.transform = indexNouvelle > indexActuelle
+                    ? 'translateX(150%)'
+                    : 'translateX(-150%)';
+
+                content.appendChild(nouvellePage);
+
+                // Forcer le reflow
+                nouvellePage.offsetWidth;
+
+                nouvellePage.style.transform = 'translateX(0%)';
+
+                setTimeout(() => {
+                    if (actuellePage && actuellePage.parentElement === content) {
+                        content.removeChild(actuellePage);
+                    }
+                    actuelleId = nouvelleId;
+                    actuellePage = nouvellePage;
+
+                }, 500);
+            });
+        });
+    </script>
+</body>
+
+</html>
