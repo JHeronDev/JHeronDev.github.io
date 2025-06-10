@@ -11,15 +11,15 @@
             font-family: sans-serif;
             text-align: center;
             background: rgb(228, 228, 228);
+            min-height: 100vh;
         }
 
         nav {
             background-color: #393e49;
-            padding: 1rem;
+            padding: 0;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-
             position: sticky;
             top: 0;
             z-index: 10;
@@ -42,7 +42,7 @@
 
         main {
             position: relative;
-            height: 93vh;
+            min-height: calc(100vh - 34px);
         }
 
         .page {
@@ -69,11 +69,7 @@
             justify-content: center;
         }
 
-        @media (max-width: 900px) {
-            nav {
-                padding: 0;
-            }
-
+        @media (max-width: 970px) {
             nav a {
                 margin: 0 2px;
             }
@@ -81,6 +77,12 @@
             .page {
                 width: 100%;
                 left: 0;
+            }
+        }
+
+        @media (max-width: 571px) {
+            main {
+                min-height: calc(100vh - 68px);
             }
         }
 
@@ -247,6 +249,7 @@
             <div class="projet"><span>#Dev</span>
                 <h2>Portfolio</h2>
                 <p>Site web personnel pour présenter mon parcours, mes compétences et mes projets, front-end JS</p>
+                <a href="https://github.com/JHeronDev/JHeronDev.github.io" target="_blank">GitHub</a>
             </div>
             <div class="projet"><span>#Dev</span>
                 <h2>Gestion de tâches</h2>
